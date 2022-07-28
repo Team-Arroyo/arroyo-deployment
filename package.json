@@ -1,0 +1,27 @@
+{
+  "name": "arroyo-deployment",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "backend application",
+  "main": "",
+  "scripts": {
+    "start-watch": "nodemon index.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "deploy": "node ./aws/resourceManagement/deploy/deployResources.mjs",
+    "destroy": "node ./aws/resourceManagement/destroy/destroyResources.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-iam": "^3.131.0",
+    "@aws-sdk/client-lambda": "^3.131.0",
+    "@aws-sdk/client-s3": "^3.121.0",
+    "@aws-sdk/client-sqs": "^3.131.0",
+    "chalk": "^5.0.1",
+    "configstore": "^6.0.0",
+    "dotenv": "^16.0.1",
+    "figlet": "^1.5.2",
+    "ora": "^6.1.2"
+  },
+  "devDependencies": {}
+}
