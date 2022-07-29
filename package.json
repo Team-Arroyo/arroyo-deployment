@@ -2,7 +2,7 @@
   "name": "arroyo-deployment",
   "type": "module",
   "version": "1.0.0",
-  "description": "backend application",
+  "description": "",
   "main": "",
   "scripts": {
     "start-watch": "nodemon index.js",
