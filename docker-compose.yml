@@ -2,7 +2,7 @@ version: "3"
 services:
   arroyo-server:
     container_name: arroyo-server
-    image: arroyo-server:cors
+    image: teamarroyo/arroyo-server:prod
     ports:
       - 5001:5001
     command: npm start
@@ -20,19 +20,14 @@ services:
         target: /root/.config/configstore
   arroyo_client:
     container_name: arroyo_client
-    image: arroyo-client:dev
+    image: teamarroyo/arroyo-client:prod
     ports:
       - 3000:3000
     command: yarn start
     networks:
       - arroyo_network
 
-
 networks:
   arroyo_network:
     name: arroyo_network
     driver: bridge
-
-
-
-
