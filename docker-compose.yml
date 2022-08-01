@@ -1,0 +1,33 @@
+version: "3"
+services:
+  arroyo-server:
+    container_name: arroyo-server
+    image: teamarroyo/arroyo-server:prod
+    ports:
+      - 5001:5001
+    command: npm start
+    networks:
+      - arroyo-network
+    environment:
+      - AWS_BUCKET_NAME
+      - AWS_ACCESS_KEY
+      - AWS_SECRET_KEY
+      - LOGSTASH_HOST
+      - AWS_REGION
+    volumes:
+      - type: bind
+        source: ~/.config/configstore
+        target: /root/.config/configstore
+  arroyo_client:
+    container_name: arroyo-client
+    image: teamarroyo/arroyo-client:prod
+    ports:
+      - 3000:3000
+    command: yarn start
+    networks:
+      - arroyo-network
+
+networks:
+  arroyo_network:
+    name: arroyo-network
+    driver: bridge
