@@ -28,6 +28,6 @@ services:
       - arroyo-network
 
 networks:
-  arroyo_network:
+  arroyo-network:
     name: arroyo-network
     driver: bridge
