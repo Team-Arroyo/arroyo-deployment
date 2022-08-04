@@ -1,6 +1,8 @@
 ### Prequesites
 You should have [node package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), the [docker engine](https://docs.docker.com/engine/install/), and [docker compose](https://docs.docker.com/compose/install/) installed.
 
+If you do not have an ELK stack already, you can use this [docker image](https://elk-docker.readthedocs.io/) to get started.
+
 Additionally, your AWS account must have the following permissions
 ```markdown
 "iam:PassRole",
@@ -99,13 +101,30 @@ LOGSTASH_HOST=your-logstash-host
 npm run deploy
 ```
 
-#### To run Arroyo
+### To run Arroyo
 
+See our read me [here](https://github.com/Team-Arroyo/Arroyo-main) for instructions on how to bulk re-ingest and query re-ingest using the browser based graphical user interface.
+
+#### To start Arroyo for the first time
 ```markdown
 docker compose-up
 ```
-See our read me [here](https://github.com/Team-Arroyo) for instructions on how to bulk re-ingest and query re-ingest using the browser based graphical user interface
+#### To restart Arroyo
+```markdown
+docker compose start
+```
 
+#### To stop Arroyo
+```markdown
+docker compose stop
+``` 
+
+
+#### To stop Arroyo and remove containers and docker network
+```markdown
+docker compose down
+```
+ 
 ### Tear-down Arroyo
 
 #### To destroy AWS infrastructure:
