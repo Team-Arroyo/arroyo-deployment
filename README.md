@@ -2,6 +2,35 @@
 You should have [node package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), the [docker engine](https://docs.docker.com/engine/install/), and [docker compose](https://docs.docker.com/compose/install/) installed.
 
 Additionally, your AWS account must have the following permissions
+```markdown
+"iam:PassRole",
+"iam:DetachRolePolicy",
+"iam:CreatePolicy",
+"iam:CreateRole",
+"iam:AttachRolePolicy",
+"iam:DeletePolicy",
+"iam:DeleteRole",
+"kms:Decrypt",
+"kms:CreateGrant",
+"kms:RetireGrant",
+"kms:Encrypt",
+"lambda:CreateEventSourceMapping",
+"lambda:CreateFunction",
+"lambda:DeleteEventSourceMapping",
+"lambda:DeleteFunction",
+"s3:DeleteObject",
+"s3:DeleteBucket",
+"s3:CreateBucket",
+"s3:ListBucket",
+"s3:PutObject",
+"s3:GetObject",
+"sqs:SendMessage",
+"sqs:GetQueueAttributes",
+"sqs:DeleteQueue",
+"sqs:CreateQueue"
+```
+
+Finally, you must configure the [http plug-in](https://www.elastic.co/blog/introducing-logstash-input-http-plugin) for logstash.
 
 ### One Time Set-up for Arroyo
 
@@ -49,6 +78,7 @@ npm run deploy
 ```markdown
 docker compose-up
 ```
+See our read me (here)[https://github.com/Team-Arroyo] for instructions on how to bulk re-ingest and query re-ingest using the browser based graphical user interface
 
 ### Tear-down Arroyo
 
