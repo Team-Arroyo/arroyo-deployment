@@ -1,12 +1,22 @@
+### Set-up Arroyo
+
+#### Clone the repo
+
 `git clone https://github.com/Team-Arroyo/arroyo-deployment.git`
+
+#### Change directories
 
 `cd arroyo-deployment`
 
+#### Install dependencies
+
 `npm install`
 
-create `.env` file
+#### Create `.env` file
 
-add:
+`touch .env`
+
+#### Using your favorite editor text editor, add the items listed below: 
 
 ```
 AWS_REGION=your-region
@@ -15,7 +25,16 @@ AWS_ACCESS_KEY=your-access-key
 AWS_SECRET_KEY=your-secret-key
 LOGSTASH_HOST=your-logstash-host
 ```
+#### To deploy AWS infrastructure
 
-`npm run deploy` to deploy AWS infrastructure
+`npm run deploy`
 
-`npm run destroy` to destroy AWS infrastructure
+#### To run Arroyo
+
+`docker compose-up`
+
+### Tear-down Arroyo
+
+#### To destroy AWS infrastructure:
+
+`npm run destroy` 
