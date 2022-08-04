@@ -1,8 +1,9 @@
 ### Prequesites
+You should have [node package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), the [docker engine](https://docs.docker.com/engine/install/), and [docker compose](https://docs.docker.com/compose/install/) installed.
 
-Your AWS account must have the following permissions
+Additionally, your AWS account must have the following permissions
 
-### Set-up Arroyo
+### One Time Set-up for Arroyo
 
 #### Clone the repo
 
