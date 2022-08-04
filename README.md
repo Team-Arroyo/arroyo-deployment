@@ -32,6 +32,32 @@ Additionally, your AWS account must have the following permissions
 
 Finally, you must configure the [http plug-in](https://www.elastic.co/blog/introducing-logstash-input-http-plugin) for logstash.
 
+```markdown
+input {
+    http {
+      port => destired_port // default port 8080
+    }
+}
+
+filter {
+  mutate {
+    // removes axios artifacts
+    remove_field => ["[event][original]", "[http]", "[user_agent]", "[url]"]
+  }
+}
+
+output {
+  stdout {
+    codec => rubydebug
+  }
+
+  elasticsearch {
+    hosts => "your_elasticsearch_primary_node"
+    index => "your_desired_index_name"  //example: s3logs-%{+YYYY.MM.dd}
+  }
+}
+```
+
 ### One Time Set-up for Arroyo
 
 #### Clone the repo
@@ -78,7 +104,7 @@ npm run deploy
 ```markdown
 docker compose-up
 ```
-See our read me (here)[https://github.com/Team-Arroyo] for instructions on how to bulk re-ingest and query re-ingest using the browser based graphical user interface
+See our read me [here](https://github.com/Team-Arroyo) for instructions on how to bulk re-ingest and query re-ingest using the browser based graphical user interface
 
 ### Tear-down Arroyo
 
