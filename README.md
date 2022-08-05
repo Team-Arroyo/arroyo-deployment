@@ -3,7 +3,7 @@ You should have [node package manager](https://docs.npmjs.com/downloading-and-in
 
 If you do not have an ELK stack already, you can use this [docker image](https://elk-docker.readthedocs.io/) to get started.
 
-Additionally, your AWS account must have the following permissions
+Additionally, your AWS account must have the following permissions. Best practice is to create an IAM [role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html) with these permissions, and then to assign this role to your user. 
 ```markdown
 "iam:PassRole",
 "iam:DetachRolePolicy",
@@ -32,9 +32,9 @@ Additionally, your AWS account must have the following permissions
 "sqs:CreateQueue"
 ```
 
-Finally, you must configure the [http plug-in](https://www.elastic.co/blog/introducing-logstash-input-http-plugin) for logstash.
+Also, you must configure the [http plug-in](https://www.elastic.co/blog/introducing-logstash-input-http-plugin) for logstash.
 
-```markdown
+```markdown, javascript
 input {
     http {
       port => destired_port // default port 8080
