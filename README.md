@@ -34,7 +34,7 @@ Additionally, your AWS account must have the following permissions. Best practic
 
 Also, you must configure the [http plug-in](https://www.elastic.co/blog/introducing-logstash-input-http-plugin) for logstash.
 
-```markdown, javascript
+```javascript 
 input {
     http {
       port => destired_port // default port 8080
@@ -59,6 +59,7 @@ output {
   }
 }
 ```
+Finally, your logs to be re-ingested must be stored in JSON format in an S3 Bucket. It is recommended that your S3 Bucket has only logs in it.
 
 ### One Time Set-up for Arroyo
 
