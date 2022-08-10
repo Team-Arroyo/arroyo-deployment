@@ -1,9 +1,12 @@
-### Prequesites
+### Prerequisites
+
 You should have [node package manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), the [docker engine](https://docs.docker.com/engine/install/), and [docker compose](https://docs.docker.com/compose/install/) installed.
+
+Make sure you are using Node v14.xx.x.
 
 If you do not have an ELK stack already, you can use this [docker image](https://elk-docker.readthedocs.io/) to get started.
 
-Additionally, your AWS account must have the following permissions. Best practice is to create an IAM [role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html) with these permissions, and then to assign this role to your user. 
+Additionally, your AWS account must have the following permissions. Best practice is to create a brand new IAM [role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html) with these permissions attached, and then to assign this role to your user. 
 ```markdown
 "iam:PassRole",
 "iam:DetachRolePolicy",
@@ -33,6 +36,7 @@ Additionally, your AWS account must have the following permissions. Best practic
 ```
 
 Also, you must configure the [http plug-in](https://www.elastic.co/blog/introducing-logstash-input-http-plugin) for logstash.
+Here is an example of a Logstash config file that includes configuration for the plugin:
 
 ```javascript 
 input {
@@ -87,7 +91,7 @@ npm install
 touch .env
 ```
 
-#### Using your favorite editor text editor, add the items listed below: 
+#### Using your favorite text editor, add the items listed below: 
 
 ```markdown
 AWS_REGION=your-region
@@ -104,7 +108,7 @@ npm run deploy
 
 ### To run Arroyo
 
-See our read me [here](https://github.com/Team-Arroyo/Arroyo-main) for instructions on how to bulk re-ingest and query re-ingest using the browser based graphical user interface.
+See our Readme [here](https://github.com/Team-Arroyo/Arroyo-main) for instructions on how to perform a **bulk re-ingest** or **query based re-ingest** using the browser based graphical user interface.
 
 #### To start Arroyo for the first time
 ```markdown
