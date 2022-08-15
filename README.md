@@ -112,7 +112,7 @@ See our Readme [here](https://github.com/Team-Arroyo/Arroyo-main) for instructio
 
 #### To start Arroyo for the first time
 ```markdown
-docker compose-up
+docker compose up
 ```
 #### To restart Arroyo
 ```markdown
